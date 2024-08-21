@@ -7,8 +7,12 @@
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94482_eng=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="82730826624000" d="384000" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="384000" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <!-- Common Encryption -->
       <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
@@ -17,12 +21,17 @@
         <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
       </ContentProtection>
     </AdaptationSet>
+    <!-- Repeat for other AdaptationSets, resetting SegmentTimeline and startNumber similarly -->
     <AdaptationSet id="2" group="1" contentType="audio" lang="tam" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
       <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="audio_94486_tam=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="82730826624000" d="384000" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="384000" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <!-- Common Encryption -->
       <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
@@ -31,48 +40,37 @@
         <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
       </ContentProtection>
     </AdaptationSet>
-    <AdaptationSet id="3" group="1" contentType="audio" lang="tel" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94490_tel=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="82730826624000" d="384000" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
-      <!-- Common Encryption -->
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <!--Widevine-->
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine">
-        <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
-      </ContentProtection>
-    </AdaptationSet>
-    <AdaptationSet id="4" group="1" contentType="audio" lang="hin" segmentAlignment="true" audioSamplingRate="48000" mimeType="audio/mp4" codecs="mp4a.40.2" startWithSAP="1">
-      <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
-      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
-      <Representation id="audio_94494_hin=94000" bandwidth="94000">
-      <SegmentTemplate timescale="48000" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="82730826624000" d="384000" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
-      <!-- Common Encryption -->
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
-      <!--Widevine-->
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" value="Widevine">
-        <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
-      </ContentProtection>
-    </AdaptationSet>
+    <!-- Continue for other AdaptationSets -->
     <AdaptationSet id="5" group="2" contentType="video" par="4:3" minBandwidth="226400" maxBandwidth="1297600" maxWidth="854" maxHeight="640" segmentAlignment="true" sar="3:4" frameRate="25" mimeType="video/mp4" codecs="avc1.4D401E" startWithSAP="1">
       <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main"/>
       <Representation id="video=226400" bandwidth="226400" width="320" height="180" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="1034135332800" d="4800" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="4800" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <Representation id="video=457600" bandwidth="457600" width="480" height="270" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="1034135332800" d="4800" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="4800" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <Representation id="video=877600" bandwidth="877600" width="640" height="360" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="1034135332800" d="4800" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="4800" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <Representation id="video=1297600" bandwidth="1297600" width="854" height="480" scanType="progressive">
-      <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="215444862">
-      <SegmentTimeline><S t="1034135332800" d="4800" r="86399"/></SegmentTimeline></SegmentTemplate></Representation>
+        <SegmentTemplate timescale="600" initialization="Disney_Channel-$RepresentationID$.dash" media="Disney_Channel-$RepresentationID$-$Number$.m4s" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="4800" r="0"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
       <!-- Common Encryption -->
       <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677"/>
       <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95" value="PlayReady"/>
