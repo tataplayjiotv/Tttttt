@@ -1,42 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MPD xmlns="urn:mpeg:dash:schema:mpd:2011" 
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:cenc="urn:mpeg:dash:schema:mpd:2011/cenc" 
-     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://dashif.org/MPDSchema/2011/DASH-MPD.xsd"
-     profile="urn:mpeg:dash:profile:isoff-on-demand:2011" 
-     type="static" 
-     mediaPresentationDuration="PT1H"
-     minBufferTime="PT1.5S">
-    
-    <Period duration="PT1H">
-        
-        <AdaptationSet mimeType="video/mp4" codecs="avc1.4d401e" segmentAlignment="true" startWithSAP="1" 
-                        cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677">
-            <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
-            <Representation id="video1" bandwidth="500000" width="640" height="360" frameRate="25">
-                <BaseURL>https://bpprod3catchup.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
-                <SegmentList duration="2000000" initialization="Disney_Channel-video1.dash" timescale="1000">
-                    <SegmentURL media="Disney_Channel-video1-$Number$.m4s" />
-                </SegmentList>
-            </Representation>
-            <Representation id="video2" bandwidth="1000000" width="1280" height="720" frameRate="25">
-                <BaseURL>https://bpprod3catchup.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
-                <SegmentList duration="2000000" initialization="Disney_Channel-video2.dash" timescale="1000">
-                    <SegmentURL media="Disney_Channel-video2-$Number$.m4s" />
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://www.mpeg.org/MPEG-DASH/schema/MPEG-DASH.xsd"
+     profiles="urn:mpeg:dash:profile:isoff-live:2011"
+     type="static"
+     mediaPresentationDuration="PT1H0M0S"
+     minBufferTime="PT0.5S">
+  
+    <Period id="1" duration="PT1H0M0S">
+        <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentComponent id="1" contentType="video"/>
+            <Representation id="video1" bandwidth="500000" width="640" height="360" codecs="avc1.4d401e">
+                <BaseURL>https://bpprod7linear.akamaized.net/bpk-tv/irdeto_com_Channel_257/output/</BaseURL>
+                <SegmentTemplate timescale="1000" media="video$Number$.mp4" initialization="init.mp4" startNumber="1"/>
+                <SegmentList duration="5000" timescale="1000">
+                    <SegmentURL media="segment1.m4s"/>
+                    <!-- Add more SegmentURL elements as needed -->
                 </SegmentList>
             </Representation>
         </AdaptationSet>
-        
-        <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" segmentAlignment="true" startWithSAP="1" 
-                        cenc:default_KID="4031DF33-5DE5-5596-86F5-12AF18A38677">
-            <cenc:pssh>AAAAOHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABgSEEAx3zNd5VWWhvUSrxijhnc45KKGtgY=</cenc:pssh>
-            <Representation id="audio1" bandwidth="64000" audioSamplingRate="48000">
-                <BaseURL>https://bpprod3catchup.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/dash/</BaseURL>
-                <SegmentList duration="2000000" initialization="Disney_Channel-audio1.dash" timescale="1000">
-                    <SegmentURL media="Disney_Channel-audio1-$Number$.m4s" />
+
+        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+            <ContentComponent id="2" contentType="audio"/>
+            <Representation id="audio1" bandwidth="96000" codecs="mp4a.40.2" audioSamplingRate="48000">
+                <BaseURL>https://bpprod7linear.akamaized.net/bpk-tv/irdeto_com_Channel_257/output/</BaseURL>
+                <SegmentTemplate timescale="1000" media="audio$Number$.mp4" initialization="init.mp4" startNumber="1"/>
+                <SegmentList duration="5000" timescale="1000">
+                    <SegmentURL media="segment1.m4s"/>
+                    <!-- Add more SegmentURL elements as needed -->
                 </SegmentList>
             </Representation>
         </AdaptationSet>
-        
+
+        <AdaptationSet mimeType="application/mp4" contentType="text">
+            <ContentComponent id="3" contentType="subtitle"/>
+            <Representation id="subtitles1" bandwidth="500" codecs="stpp">
+                <BaseURL>https://bpprod7linear.akamaized.net/bpk-tv/irdeto_com_Channel_257/output/</BaseURL>
+                <SegmentTemplate timescale="1000" media="subtitles$Number$.vtt" initialization="init.vtt" startNumber="1"/>
+                <SegmentList duration="5000" timescale="1000">
+                    <SegmentURL media="segment1.vtt"/>
+                    <!-- Add more SegmentURL elements as needed -->
+                </SegmentList>
+            </Representation>
+        </AdaptationSet>
     </Period>
-</MPD>
+
+    <ProtectionScheme>
+        <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" 
+                            cenc:default_KID="1CBE293F-DC38-5DAC-8C0D-502B04F338E4" 
+                            cenc:pssh="AAAAMnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABISEBy+KT/cOF2sjA1QKwTzOOQ=">
+            <AdaptationSet contentComponent="1">
+                <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" 
+                                    cenc:default_KID="1CBE293F-DC38-5DAC-8C0D-502B04F338E4" 
+                                    cenc:pssh="AAAAMnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABISEBy+KT/cOF2sjA1QKwTzOOQ=">
+                    <cenc:pssh>AAAAMnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAABISEBy+KT/cOF2sjA1QKwTzOOQ=</cenc:pssh>
+                </ContentProtection>
+            </AdaptationSet>
+        </ProtectionScheme>
+    </MPD>
